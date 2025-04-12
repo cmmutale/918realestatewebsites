@@ -1,0 +1,132 @@
+@import url('./accessibility.css');
+@import "tailwindcss";
+
+:root {
+    --background: #F8F4F1;
+    --foreground: #060606;
+    --primary: #C1440E;
+    --primary-foreground: #fcfcf7;
+    --secondary: #171717;
+    --secondary-foreground: #fcfcf7;
+    --accent: #171717;
+    --accent-foreground: #fcfcf7;
+    --accessible: #2c3eff;
+
+    --fs--2: clamp(0.5628rem, 0.7402rem + -0.229vw, 0.6944rem);
+    --fs--1: clamp(0.7502rem, 0.8623rem + -0.1446vw, 0.8333rem);
+    --fs-0: clamp(1rem, 1rem + 0vw, 1rem);
+    --fs-1: clamp(1.2rem, 1.1537rem + 0.2313vw, 1.333rem);
+    --fs-2: clamp(1.44rem, 1.3228rem + 0.5859vw, 1.7769rem);
+    --fs-3: clamp(1.728rem, 1.5052rem + 1.1141vw, 2.3686rem);
+    --fs-4: clamp(2.0736rem, 1.6966rem + 1.8848vw, 3.1573rem);
+    --fs-5: clamp(2.4883rem, 1.8899rem + 2.992vw, 4.2087rem);
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accessible: var(--accessible);
+
+    --font-body: 'Work Sans Variable', sans-serif;
+    --font-heading: 'Archivo', sans-serif;
+    --font-display: 'Archivo Black', sans-serif;
+
+    --text-xs: clamp(0.5628rem, 0.7402rem + -0.229vw, 0.6944rem);
+    --text-sm: clamp(0.7502rem, 0.8623rem + -0.1446vw, 0.8333rem);
+    --text-0: clamp(1rem, 1rem + 0vw, 1rem);
+    --text-1: clamp(1.2rem, 1.1537rem + 0.2313vw, 1.333rem);
+    --text-2: clamp(1.44rem, 1.3228rem + 0.5859vw, 1.7769rem);
+    --text-3: clamp(1.728rem, 1.5052rem + 1.1141vw, 2.3686rem);
+    --text-4: clamp(2.0736rem, 1.6966rem + 1.8848vw, 3.1573rem);
+    --text-5: clamp(2.4883rem, 1.8899rem + 2.992vw, 4.2087rem);
+}
+
+.content {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(1240px, 100% - var(--gap) * 2);
+    --popout: minmax(0, 2rem);
+    --feature: minmax(0, 5rem);
+
+    display: grid;
+    grid-template-columns:
+        [full-start] var(--full) [feature-start] var(--feature) [popout-start] var(--popout) [content-start] var(--content) [content-end] var(--popout) [popout-end] var(--feature) [feature-end] var(--full) [full-end];
+}
+
+.content>* {
+    grid-column: content;
+}
+
+.popout {
+    grid-column: popout;
+}
+
+.feature {
+    grid-column: feature;
+}
+
+.full {
+    grid-column: full;
+}
+
+
+@layer base {
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* components------------------------------ */
+
+@layer components {
+
+    /* Base button styles */
+    .btn {
+        @apply inline-flex items-center justify-center font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200;
+    }
+
+    /* Variants */
+    .btn-primary {
+        @apply bg-primary text-primary-foreground hover:bg-primary/80 focus:ring-accessible;
+    }
+
+    .btn-secondary {
+        @apply bg-background text-foreground focus:ring-accessible underline underline-offset-4 decoration-2 !px-0;
+    }
+
+    /* Sizes */
+    .btn-sm {
+        @apply text-sm px-3 py-1.5;
+    }
+
+    .btn-md {
+        @apply text-0 px-4 py-2;
+    }
+
+    .btn-lg {
+        @apply text-0 px-5 py-3;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @apply text-balance tracking-tighter leading-[100%];
+    }
+
+    p,
+    li {
+        @apply text-pretty;
+    }
+
+    button {
+        @apply font-heading;
+    }
+}

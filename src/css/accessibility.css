@@ -1,0 +1,10 @@
+@layer base {
+
+    button,
+    a,
+    input,
+    select,
+    textarea {
+        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500;
+    }
+}

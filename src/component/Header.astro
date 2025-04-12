@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '../assets/918realestatewebsites_logo.svg'
+---
+
+<header class="header-wrapper content">
+  <div class="header-inner flex items-center justify-between py-8">
+    <div class="logo">
+        <Image src={Logo} width={300} height={45} alt={`918realestatewebsites logo`}/>
+    </div>
+    <nav class="navigation">
+      <button class="btn btn-lg btn-primary"> Start Selling Homes </button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,59 @@
+---
+const faq = [
+  {
+    question: `What is the cost of developing and maintaining a website?`,
+    answer: `Custom sites often cost thousands upfront, plus monthly fees. That’s steep for small agencies. We offer affordable, transparent pricing with no hidden billing.​`,
+  },
+  {
+    question: `Should I choose a template-based website or opt for a custom design?`,
+    answer: `Templates are quick but generic; custom designs are unique but expensive. We provide tailored designs at template prices, combining uniqueness with affordability.​`,
+  },
+  {
+    question: `How will I drive traffic to my website?`,
+    answer: `SEO and marketing strategies are essential but can be complex and costly. Our websites are SEO-optimized from the start, ensuring visibility without extra effort.​`,
+  },
+  {
+    question: `What content and features should my website include to effectively engage clients?`,
+    answer: `Standard sites may lack key features like testimonials or contact forms. We ensure your site includes all essential tools to engage visitors and convert leads.`,
+  },
+  {
+    question: `How can I integrate MLS listings into my website?`,
+    answer: `MLS integration can be complex and may incur additional costs. We offer seamless MLS integration, keeping your listings up-to-date effortlessly.`,
+  },
+  {
+    question: `Do I need technical skills to manage my website?`,
+    answer: `Many platforms require technical skills for updates. We provide easy documentation and help platforms work for you, not the other way around.`,
+  },
+];
+---
+
+<section>
+  <div class="inner space-y-8 py-24">
+    <div class="stack text-center">
+      <h2 class="font-bold text-4">Here are some Need-to-knows</h2>
+    </div>
+    <div class="faq-list">
+      <ul>
+        {
+          faq.map((q) => (
+            <li class="py-4">
+              <div class="max-w-[60ch] mx-auto text-center">
+                <p class="font-semibold text-1 underline underline-offset-2 decoration-2">
+                  {q.question}
+                </p>
+                <p>{q.answer}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="btn-row pt-8 flex gap-6 flex-wrap justify-center">
+      <button class="btn btn-primary btn-lg"> Start Selling Homes </button>
+      <button class="btn btn-secondary btn-md"
+        >📝 Learn more on our blog</button
+      >
+    </div>
+  </div>
+</section>

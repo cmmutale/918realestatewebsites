@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '../../assets/918realestatewebsites_logo.svg'
+---
+
+<footer>
+    <div class="inner py-16">
+        <div class="stack flex flex-col items-center space-y-8">
+            <div class="logo">
+                <Image src={Logo} width={300} height={45} alt={`918realestatewebsites logo`}/>
+            </div>
+
+            <button class="btn btn-secondary btn-lg">hello@918realesatewebsites.com</button>
+        </div>
+    </div>
+</footer>

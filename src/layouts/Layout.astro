@@ -1,0 +1,28 @@
+---
+import "../css/global.css";
+import "@fontsource-variable/work-sans";
+import "@fontsource/archivo-black";
+import "@fontsource/archivo";
+import Header from "../component/Header.astro";
+
+const { title = "918realestatewebsites" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="content">
+      <div class="body-inner min-h-screen">
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>
