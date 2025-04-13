@@ -1,5 +1,6 @@
 ---
 title: 'Building Your Own MLS: A Practical Guide for Real Estate Professionals'
+slug: building-your-own-mls
 pubDate: 2025-04-12
 description: 'This is the first post of my new Astro blog.'
 author: 'Chilufya Mutale'

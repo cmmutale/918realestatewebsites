@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import LocalImage from "../../assets/Map_Journey_simple_compose.png";
+import FastImage from "../../assets/Real_Estate_Design_simple_compose.png";
+import ExclusiveImage from "../../assets/Earthy_Avatar_Group_simple_compose.png";
+
+const benefitsCard = [
+  {
+    title: "We are local",
+    description: "We know what buyers want to see",
+    image: {
+      src: LocalImage,
+      alt: "Map illustration with two pins on Austin and Tulsa with a dotted line between them.",
+    },
+    cta: {
+      label: "📍Serving Tulsa, Oklahoma and Austin, Texas",
+      url: "#",
+    },
+  },
+  {
+    title: "We are fast",
+    description:
+      "Our process is fast, affordable, and completely hands-off for you.",
+    image: {
+      src: FastImage,
+      alt: "Colorful 3D Illustration of a computer screen with a house with a smiley face ",
+    },
+    cta: {
+      label: "📦 Launch your new site in 10–21 days",
+      url: "#",
+    },
+  },
+  {
+    title: "We are exclusive",
+    description:
+      "We only work with a few clients at a time to give you personal attention.",
+    image: {
+      src: ExclusiveImage,
+      alt: "Faceless avatars all the same color with 3 standing out with different colors.",
+    },
+    cta: {
+      label: "💸 Flexible pricing with no hidden fees",
+      url: "#",
+    },
+  },
+];
+---
+
+<section id="benefits" class="wrapper">
+  <div class="inner py-24">
+    <div class="stack"></div>
+    <div
+      class="card-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 group"
+    >
+      {
+        benefitsCard.map((card) => (
+          <div class="card group-hover:scale-95 hover:scale-105 transition-transform duration-500">
+            <div class="card__header pb-4">
+              <Image
+                src={card.image.src}
+                alt={card.image.alt}
+                height={200}
+                width={350}
+                class="mx-auto rounded-xl hover:outline-none hover:ring-4 ring-primary ring-offset-4 duration-300 group-hover:scale-100 hover:scale-110"
+              />
+            </div>
+
+            <div class="card__content space-y-2 px-2 text-center">
+              <a href={card.cta.url} class="btn btn-lg btn-secondary">
+                {card.cta.label}
+              </a>
+              <h3 class="font-bold text-3 text-center">{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

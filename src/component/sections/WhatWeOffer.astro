@@ -38,23 +38,23 @@ const features = [
         Results
       </h2>
     </div>
-    <div class="card-gallery grid grid-cols-1 text-center">
+    <div class="card-gallery text-center">
       {
         features.map((feature) => (
-          <div class="p-6 grid grid-cols-3">
-            <div></div>
-            <h4 class="font-body font-medium text-1 grow">{feature.label}</h4>
-            <div></div>
+          <div class="p-6">
+            <div class="p-4 bg-primary-foreground/50 rounded-xl w-fit mx-auto relative
+            hover:outline-none hover:ring-4 ring-primary ring-offset-4 duration-300">
+              <h4 class="font-body font-medium text-1 grow">{feature.label}</h4>
+            </div>
           </div>
         ))
       }
     </div>
     <div class="button-row flex justify-center mx-auto">
-      <a 
-      href="https://tally.so/r/3jE9xE"
-      target="_blank"
-      class="btn btn-lg btn-secondary"
-        >Get a Free Website Strategy Session</a
+      <a
+        href="https://tally.so/r/3jE9xE"
+        target="_blank"
+        class="btn btn-lg btn-primary">Get a Free Website Strategy Session</a
       >
     </div>
   </div>
