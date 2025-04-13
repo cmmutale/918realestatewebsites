@@ -1,5 +1,33 @@
 ---
+import { Image } from "astro:assets";
+import listingBadge from "../../assets/listing_badge.png";
 
+const features = [
+  {
+    label: `Look professional on phones, tablets, and desktops`,
+    image: ``,
+  },
+  {
+    label: `Showcase your listings beautifully`,
+    image: ``,
+  },
+  {
+    label: `Highlight your family values & community roots`,
+    image: ``,
+  },
+  {
+    label: `Load fast and rank on Google`,
+    image: ``,
+  },
+  {
+    label: `Easy to maintain and update`,
+    image: ``,
+  },
+  {
+    label: `Launch in as little as 12 days`,
+    image: ``,
+  },
+];
 ---
 
 <section class="wrapper">
@@ -11,40 +39,22 @@
       </h2>
     </div>
     <div class="card-gallery grid grid-cols-1 text-center">
-      <div class="p-6">
-        <h4 class="font-body font-medium text-1">
-          Look professional on phones, tablets, and desktops
-        </h4>
-      </div>
-      <div class="p-6">
-        <h4 class="font-body font-medium text-1">
-          Showcase your listings beautifully
-        </h4>
-      </div>
-      <div class="p-6">
-        <h4 class="font-body font-medium text-1">
-          Highlight your family values & community roots
-        </h4>
-      </div>
-      <div class="p-6">
-        <h4 class="font-body font-medium text-1">
-          Load fast and rank on Google
-        </h4>
-      </div>
-      <div class="p-6">
-        <h4 class="font-body font-medium text-1">
-          Easy to maintain and update
-        </h4>
-      </div>
-      <div class="p-6">
-        <h4 class="font-body font-medium text-1">
-          Launch in as little as 12 days
-        </h4>
-      </div>
+      {
+        features.map((feature) => (
+          <div class="p-6 grid grid-cols-3">
+            <div></div>
+            <h4 class="font-body font-medium text-1 grow">{feature.label}</h4>
+            <div></div>
+          </div>
+        ))
+      }
     </div>
     <div class="button-row flex justify-center mx-auto">
-      <button class="btn btn-lg btn-secondary"
-        >Get a Free Website Strategy Session</button
+      <a 
+      href="https://tally.so/r/3jE9xE"
+      target="_blank"
+      class="btn btn-lg btn-secondary"
+        >Get a Free Website Strategy Session</a
       >
     </div>
   </div>

@@ -4,7 +4,9 @@ import Logo from "../assets/918realestatewebsites_logo.svg";
 ---
 
 <header class="header-wrapper content">
-  <div class="header-inner flex flex-col gap-8 sm:flex-row items-center justify-between py-8">
+  <div
+    class="header-inner flex flex-col gap-8 sm:flex-row items-center justify-between py-8"
+  >
     <div class="logo">
       <a href="/">
         <Image
@@ -15,8 +17,15 @@ import Logo from "../assets/918realestatewebsites_logo.svg";
         />
       </a>
     </div>
-    <nav class="navigation">
-      <button class="btn btn-lg btn-primary">Start Selling Homes</button>
+    <nav class="navigation flex gap-8 items-center">
+      <div>
+        <a href="/blog" class="btn btn-md hover:underline"> Blog </a>
+      </div>
+      <a
+        href="https://cal.com/cmmutale/918realestatewebsites"
+        target="_blank"
+        class="btn btn-lg btn-primary">Start Selling Homes</a
+      >
     </nav>
   </div>
 </header>

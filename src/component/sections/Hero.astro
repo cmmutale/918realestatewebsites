@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import WebsiteScreenShot from "../../assets/website_screenshot.png";
-import WebsiteScreenShot2 from "../../assets/website_screenshot_1.png";
+import desktopMockup from "../../assets/desktop_mockup.png";
+import mobileDesktop from "../../assets/mobile_mockup.png";
 
 const notebook = {
   heading: `Sell More Homes Before the First Showing`,
@@ -11,31 +11,39 @@ const notebook = {
 
 <section class="hero py-24">
   <div class="flex flex-wrap items-center space-y-10 sm:space-y-0">
-    <div class="stack space-y-4 w-full sm:w-[35%] grow">
+    <div class="stack space-y-4 w-full sm:w-[35%] md:w-[20%] grow">
       <h1 class="font-bold font-display text-5">{notebook.heading}</h1>
       <p class="text-1 text-secondary">{notebook.body}</p>
       <div class="btn-row pt-8 flex gap-6 flex-wrap">
-        <button class="btn btn-primary btn-lg"> Start Selling Homes </button>
-        <button class="btn btn-secondary btn-md"
-          >Get a A Free Strategy Session</button
+        <a
+          href="https://cal.com/cmmutale/918realestatewebsites"
+          target="_blank"
+          class="btn btn-primary btn-lg"
+        >
+          Start Selling Homes
+        </a>
+        <a
+          target="_blank"
+          href="https://tally.so/r/3jE9xE"
+          class="btn btn-secondary btn-md">Get Some Free Consultation</a
         >
       </div>
     </div>
-    <div class="w-full sm:w-[35%] grow">
+    <div class="w-full sm:w-[35%] md:w-[40%] grow">
       <div class="relative my-auto">
-        <!-- <Image
-            src={WebsiteScreenShot}
-            width={400}
-            alt={`website screenshot`}
-            class={`absolute`}
-          /> -->
-
         <Image
-          src={WebsiteScreenShot2}
-          width={400}
+          src={desktopMockup}
+          width={700}
           alt={`website screenshot`}
           class={`mx-auto`}
         />
+
+        <!-- <Image
+        src={mobileDesktop}
+        width={200}
+        alt={`website screenshot`}
+        class={`mx-auto sm:hidden`}
+      /> -->
       </div>
     </div>
   </div>
