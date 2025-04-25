@@ -1,12 +1,27 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "../assets/918realestatewebsites_logo.svg";
+import MobileNav from "./views/MobileNav.tsx";
+
+const navItems = [
+  {
+    label: `About Us`,
+    url: "#",
+  },
+  {
+    label: `Who We Serve`,
+    url: "#",
+  },
+
+  {
+    label: `Blog`,
+    url: "#",
+  },
+];
 ---
 
 <header class="header-wrapper content">
-  <div
-    class="header-inner flex flex-col gap-8 sm:flex-row items-center justify-between py-8"
-  >
+  <div class="header-inner flex flex-row items-center justify-between py-8">
     <div class="logo">
       <a href="/">
         <Image
@@ -17,15 +32,24 @@ import Logo from "../assets/918realestatewebsites_logo.svg";
         />
       </a>
     </div>
-    <nav class="navigation flex gap-8 items-center">
-      <div>
-        <a href="/blog" class="btn btn-md hover:underline"> Blog </a>
-      </div>
+    <nav class="navigation--desktop lg:flex gap-8 items-center hidden">
+      <ul class="navigation-item-list flex gap-2 items-center">
+        {
+          navItems.map((navItem) => (
+            <li>
+              <a href="/blog" class="btn btn-md hover:underline">
+                {navItem.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
       <a
         href="https://cal.com/cmmutale/918realestatewebsites"
         target="_blank"
         class="btn btn-lg btn-primary">Start Selling Homes</a
       >
     </nav>
+    <MobileNav client:load />
   </div>
 </header>
