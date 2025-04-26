@@ -56,8 +56,8 @@ export default function MobileNav() {
             : 'opacity-0 -translate-y-4 pointer-events-none'}
           `}>
         {
-          navItems.map((navItem) => (
-            <li>
+          navItems.map((navItem, index) => (
+            <li key={index}>
               <a 
               href="#" 
               className="btn btn-md hover:underline w-full"

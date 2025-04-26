@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Logo from "../assets/918realestatewebsites_logo.svg";
 import MobileNav from "./views/MobileNav.tsx";
+import { Picture } from "astro:assets";
 
 const navItems = [
   {
@@ -25,11 +26,19 @@ const navItems = [
     <div class="logo">
       <a href="/">
         <Image
+  src={Logo}
+  alt="A descriptive alt text"
+  widths={[320, 640, 960, 1200]}         
+  loading="lazy"
+  decoding="async"
+  class="rounded-md w-[200px] sm:w-[300px]"
+/>
+        <!-- <Image
           src={Logo}
-          width={300}
+          width={[300, ]}
           height={45}
           alt={`918realestatewebsites logo`}
-        />
+        /> -->
       </a>
     </div>
     <nav class="navigation--desktop lg:flex gap-8 items-center hidden">
